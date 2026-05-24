@@ -1,7 +1,12 @@
+using PostgresMonitor.Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton(new PostgresMetricsService("Host=localhost;Database=postgres;Username=postgres;Password=YourPassword"));
+builder.Services.AddSingleton<MetricsStorageService>();
+builder.Services.AddHostedService<MetricsCollectorBackgroundService>();
 
 var app = builder.Build();
 
