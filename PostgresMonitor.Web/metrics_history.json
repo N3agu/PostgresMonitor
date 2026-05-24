@@ -1,0 +1,37 @@
+[
+  {
+    "Timestamp": "2026-05-24T17:49:33.0383783Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 23.3,
+    "MemoryUsage": 5699
+  },
+  {
+    "Timestamp": "2026-05-24T17:49:43.3476956Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 18.8,
+    "MemoryUsage": 5676
+  },
+  {
+    "Timestamp": "2026-05-24T17:49:53.3629217Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 28.43,
+    "MemoryUsage": 5636
+  },
+  {
+    "Timestamp": "2026-05-24T17:50:03.387204Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 32.16,
+    "MemoryUsage": 5562
+  },
+  {
+    "Timestamp": "2026-05-24T17:50:13.3967628Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 38.38,
+    "MemoryUsage": 5546
+  }
+]

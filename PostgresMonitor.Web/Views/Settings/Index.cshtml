@@ -1,45 +1,71 @@
-﻿@model PostgresMonitor.Web.Models.DbSettings
+﻿@model List<PostgresMonitor.Web.Models.DbSettings>
 
 @{
-    ViewData["Title"] = "Database Settings";
+    ViewData["Title"] = "Database Management";
 }
 
 <div class="container mt-4">
-    <h2>Database Configuration</h2>
-    <p class="text-muted">Configure the PostgreSQL database you want to monitor.</p>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Database Management</h2>
+        <a asp-action="Edit" class="btn btn-primary">Add New Database</a>
+    </div>
 
     @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-success">
-            @TempData["SuccessMessage"]
-        </div>
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
     }
 
-    <div class="card shadow-sm" style="max-width: 600px;">
-        <div class="card-body">
-            <form asp-action="Save" method="post">
-                <div class="mb-3">
-                    <label asp-for="Host" class="form-label">Host</label>
-                    <input asp-for="Host" class="form-control" required />
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Port" class="form-label">Port</label>
-                    <input asp-for="Port" type="number" class="form-control" required />
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Database" class="form-label">Database Name</label>
-                    <input asp-for="Database" class="form-control" required />
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Username" class="form-label">Username</label>
-                    <input asp-for="Username" class="form-control" required />
-                </div>
-                <div class="mb-3">
-                    <label asp-for="Password" class="form-label">Password</label>
-                    <input asp-for="Password" type="password" class="form-control" />
-                </div>
-                <button type="submit" class="btn btn-primary">Save Settings</button>
-            </form>
-        </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Status</th>
+                    <th>Name</th>
+                    <th>Host:Port</th>
+                    <th>Database</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr><td colspan="5" class="text-center">No databases configured.</td></tr>
+                }
+                @foreach (var db in Model)
+                {
+                    <tr>
+                        <td>
+                            @if (db.IsActive)
+                            {
+                                <span class="badge bg-success">Active</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Inactive</span>
+                            }
+                        </td>
+                        <td><strong>@db.ConnectionName</strong></td>
+                        <td>@db.Host:@db.Port</td>
+                        <td>@db.Database</td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                @if (!db.IsActive)
+                                {
+                                    <form asp-action="SetActive" method="post">
+                                        <input type="hidden" name="id" value="@db.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-success">Set Active</button>
+                                    </form>
+                                }
+                                <a asp-action="Edit" asp-route-id="@db.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                                <form asp-action="Delete" method="post" onsubmit="return confirm('Are you sure?');">
+                                    <input type="hidden" name="id" value="@db.Id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

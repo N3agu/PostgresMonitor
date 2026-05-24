@@ -39,7 +39,12 @@ namespace PostgresMonitor.Web.Services
                 metrics.MemoryUsage = -1;
             }
 
-            var settings = await _settingsService.GetSettingsAsync();
+            var settings = await _settingsService.GetActiveSettingsAsync();
+
+            if (settings == null)
+            {
+                throw new InvalidOperationException("No active database is configured to monitor.");
+            }
 
             if (string.IsNullOrWhiteSpace(settings.Password))
             {

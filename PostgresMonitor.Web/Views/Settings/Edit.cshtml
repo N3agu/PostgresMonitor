@@ -1,0 +1,49 @@
+﻿@model PostgresMonitor.Web.Models.DbSettings
+
+@{
+    ViewData["Title"] = Model.Id == Guid.Empty ? "Add Database" : "Edit Database";
+}
+
+<div class="container mt-4">
+    <h2>@ViewData["Title"]</h2>
+    <a asp-action="Index" class="btn btn-link px-0 mb-3">&larr; Back to Management</a>
+
+    <div class="card shadow-sm" style="max-width: 600px;">
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="IsActive" />
+
+                <div class="mb-3">
+                    <label asp-for="ConnectionName" class="form-label">Connection Name (Alias)</label>
+                    <input asp-for="ConnectionName" class="form-control" required />
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label asp-for="Host" class="form-label">Host</label>
+                        <input asp-for="Host" class="form-control" required />
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Port" class="form-label">Port</label>
+                        <input asp-for="Port" type="number" class="form-control" required />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Database" class="form-label">Database Name</label>
+                    <input asp-for="Database" class="form-control" required />
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label asp-for="Username" class="form-label">Username</label>
+                        <input asp-for="Username" class="form-control" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Save Configuration</button>
+            </form>
+        </div>
+    </div>
+</div>
