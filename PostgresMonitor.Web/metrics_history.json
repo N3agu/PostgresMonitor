@@ -33,5 +33,257 @@
     "SlowQueries": 0,
     "CpuUsage": 38.38,
     "MemoryUsage": 5546
+  },
+  {
+    "Timestamp": "2026-05-24T17:50:23.4106267Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 44.13,
+    "MemoryUsage": 5661
+  },
+  {
+    "Timestamp": "2026-05-24T17:50:33.417957Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 42.39,
+    "MemoryUsage": 5695
+  },
+  {
+    "Timestamp": "2026-05-24T17:50:43.4449098Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 46.12,
+    "MemoryUsage": 5678
+  },
+  {
+    "Timestamp": "2026-05-24T17:53:30.6550589Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 39.9,
+    "MemoryUsage": 5600
+  },
+  {
+    "Timestamp": "2026-05-24T17:53:41.271066Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 40.37,
+    "MemoryUsage": 5481
+  },
+  {
+    "Timestamp": "2026-05-24T17:53:51.2801717Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 23.12,
+    "MemoryUsage": 5475
+  },
+  {
+    "Timestamp": "2026-05-24T17:54:01.2934814Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 32.67,
+    "MemoryUsage": 5401
+  },
+  {
+    "Timestamp": "2026-05-24T17:54:11.3050953Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 45.22,
+    "MemoryUsage": 5397
+  },
+  {
+    "Timestamp": "2026-05-24T17:54:21.3511249Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 36.74,
+    "MemoryUsage": 5280
+  },
+  {
+    "Timestamp": "2026-05-24T17:57:17.7473814Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 59.92,
+    "MemoryUsage": 5445
+  },
+  {
+    "Timestamp": "2026-05-24T17:57:28.4651746Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 47.67,
+    "MemoryUsage": 5335
+  },
+  {
+    "Timestamp": "2026-05-24T17:57:38.5143951Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 29.84,
+    "MemoryUsage": 5297
+  },
+  {
+    "Timestamp": "2026-05-24T17:57:48.5322152Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 26.38,
+    "MemoryUsage": 5277
+  },
+  {
+    "Timestamp": "2026-05-24T17:57:58.5457908Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 29.51,
+    "MemoryUsage": 5245
+  },
+  {
+    "Timestamp": "2026-05-24T17:58:08.554861Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 28.15,
+    "MemoryUsage": 5210
+  },
+  {
+    "Timestamp": "2026-05-24T17:58:18.5697208Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 30.65,
+    "MemoryUsage": 5235
+  },
+  {
+    "Timestamp": "2026-05-24T17:58:28.5775472Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 32.44,
+    "MemoryUsage": 5292
+  },
+  {
+    "Timestamp": "2026-05-24T17:58:38.588657Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 35.93,
+    "MemoryUsage": 5294
+  },
+  {
+    "Timestamp": "2026-05-24T17:58:48.5976635Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 33.57,
+    "MemoryUsage": 5301
+  },
+  {
+    "Timestamp": "2026-05-24T17:58:58.6062502Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 34.24,
+    "MemoryUsage": 5304
+  },
+  {
+    "Timestamp": "2026-05-24T17:59:08.6498962Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 27.85,
+    "MemoryUsage": 5261
+  },
+  {
+    "Timestamp": "2026-05-24T17:59:18.6637776Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 46.76,
+    "MemoryUsage": 5205
+  },
+  {
+    "Timestamp": "2026-05-24T18:00:50.6077495Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 50.75,
+    "MemoryUsage": 5363
+  },
+  {
+    "Timestamp": "2026-05-24T18:01:01.4517691Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 34.69,
+    "MemoryUsage": 5222
+  },
+  {
+    "Timestamp": "2026-05-24T18:01:11.473952Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 32.49,
+    "MemoryUsage": 5147
+  },
+  {
+    "Timestamp": "2026-05-24T18:01:21.4985517Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 43.73,
+    "MemoryUsage": 4939
+  },
+  {
+    "Timestamp": "2026-05-24T18:01:31.5041116Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 33.08,
+    "MemoryUsage": 4918
+  },
+  {
+    "Timestamp": "2026-05-24T18:17:05.6496631Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 34.61,
+    "MemoryUsage": 5117
+  },
+  {
+    "Timestamp": "2026-05-24T18:17:16.30741Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 57.32,
+    "MemoryUsage": 5082
+  },
+  {
+    "Timestamp": "2026-05-24T18:17:26.3193557Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 30.04,
+    "MemoryUsage": 5067
+  },
+  {
+    "Timestamp": "2026-05-24T18:17:36.3285548Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 40.8,
+    "MemoryUsage": 4969
+  },
+  {
+    "Timestamp": "2026-05-24T18:17:46.3379334Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 45.17,
+    "MemoryUsage": 5050
+  },
+  {
+    "Timestamp": "2026-05-24T18:17:56.3500904Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 50.18,
+    "MemoryUsage": 5022
+  },
+  {
+    "Timestamp": "2026-05-24T18:18:06.3616565Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 31.64,
+    "MemoryUsage": 5028
+  },
+  {
+    "Timestamp": "2026-05-24T18:18:16.3652001Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 31.27,
+    "MemoryUsage": 5008
+  },
+  {
+    "Timestamp": "2026-05-24T18:18:26.3805507Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 37.48,
+    "MemoryUsage": 4907
   }
 ]
