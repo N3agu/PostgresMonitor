@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using Npgsql;
 using PostgresMonitor.Web.Models;
 
@@ -6,29 +8,25 @@ namespace PostgresMonitor.Web.Services
 {
     public class PostgresMetricsService
     {
-        private readonly string _connectionString;
+        private readonly SettingsService _settingsService;
         private PerformanceCounter _cpuCounter;
         private PerformanceCounter _ramCounter;
 
-        public PostgresMetricsService(string connectionString)
+        public PostgresMetricsService(SettingsService settingsService)
         {
-            _connectionString = connectionString;
+            _settingsService = settingsService;
 
             if (OperatingSystem.IsWindows())
             {
                 _cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
                 _ramCounter = new PerformanceCounter("Memory", "Available MBytes");
-
                 _cpuCounter.NextValue();
             }
         }
 
         public async Task<HealthMetrics> CollectMetricsAsync()
         {
-            var metrics = new HealthMetrics
-            {
-                Timestamp = DateTime.UtcNow
-            };
+            var metrics = new HealthMetrics { Timestamp = DateTime.UtcNow };
 
             if (OperatingSystem.IsWindows())
             {
@@ -41,7 +39,24 @@ namespace PostgresMonitor.Web.Services
                 metrics.MemoryUsage = -1;
             }
 
-            using var connection = new NpgsqlConnection(_connectionString);
+            var settings = await _settingsService.GetSettingsAsync();
+
+            if (string.IsNullOrWhiteSpace(settings.Password))
+            {
+                throw new InvalidOperationException("Database password is not configured. Please update settings.");
+            }
+
+            var builder = new NpgsqlConnectionStringBuilder
+            {
+                Host = settings.Host,
+                Port = settings.Port,
+                Database = settings.Database,
+                Username = settings.Username,
+                Password = settings.Password,
+                Timeout = 5
+            };
+
+            using var connection = new NpgsqlConnection(builder.ConnectionString);
             await connection.OpenAsync();
 
             using (var cmd = new NpgsqlCommand("SELECT count(*) FROM pg_stat_activity WHERE state = 'active';", connection))
