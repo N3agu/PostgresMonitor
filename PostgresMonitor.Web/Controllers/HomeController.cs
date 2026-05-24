@@ -1,31 +1,21 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PostgresMonitor.Web.Models;
+using PostgresMonitor.Web.Services;
 
-namespace PostgresMonitor.Web.Controllers;
-
-public class HomeController : Controller
+namespace PostgresMonitor.Web.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly MetricsStorageService _storageService;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public HomeController(MetricsStorageService storageService)
+        {
+            _storageService = storageService;
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public async Task<IActionResult> Index()
+        {
+            var history = await _storageService.GetMetricsHistoryAsync();
+            return View(history);
+        }
     }
 }

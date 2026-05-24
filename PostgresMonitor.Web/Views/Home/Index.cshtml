@@ -1,8 +1,83 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<PostgresMonitor.Web.Models.HealthMetrics>
+
+@{
+    ViewData["Title"] = "Database Health Dashboard";
+    var latest = Model.LastOrDefault();
+    var historyDescending = Model.AsEnumerable().Reverse().ToList();
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center mb-4">
+    <h1 class="display-4">PostgresMonitor</h1>
+    <p>Real-time PostgreSQL Health and Performance Dashboard</p>
 </div>
+
+@if (latest == null)
+{
+    <div class="alert alert-info text-center">
+        Waiting for the background service to collect the first batch of metrics. Please refresh in 10 seconds.
+    </div>
+}
+else
+{
+    <div class="row mb-5">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Active Connections</div>
+                <div class="card-body">
+                    <h2 class="card-title">@latest.ActiveConnections</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Slow Queries (>2s)</div>
+                <div class="card-body">
+                    <h2 class="card-title">@latest.SlowQueries</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-dark bg-warning mb-3">
+                <div class="card-header">CPU Usage</div>
+                <div class="card-body">
+                    <h2 class="card-title">@latest.CpuUsage %</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-dark bg-info mb-3">
+                <div class="card-header">Available Memory</div>
+                <div class="card-body">
+                    <h2 class="card-title">@latest.MemoryUsage MB</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Historical Trends</h3>
+    <div class="table-responsive">
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Timestamp (UTC)</th>
+                    <th>Active Connections</th>
+                    <th>Slow Queries</th>
+                    <th>CPU Usage (%)</th>
+                    <th>Available RAM (MB)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in historyDescending)
+                {
+                    <tr>
+                        <td>@item.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>@item.ActiveConnections</td>
+                        <td>@item.SlowQueries</td>
+                        <td>@item.CpuUsage</td>
+                        <td>@item.MemoryUsage</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
