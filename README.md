@@ -31,14 +31,61 @@ The application follows a standard ASP.NET Core MVC architecture combined with a
 
 ## Screenshots
 
-### Dashboard (Dark Mode)
-![Dashboard - Dark Mode](Images/dark.png)
+<details open>
+  <summary><strong>Dashboard (Light Mode)</strong></summary>
+  
+  ![light](https://raw.githubusercontent.com/N3agu/PostgresMonitor/refs/heads/main/Images/light.png)
+</details>
 
-### Dashboard (Light Mode)
-![Dashboard - Light Mode](Images/light.png)
+<details>
+  <summary><strong>Dashboard (Dark Mode)</strong></summary>
+  
+  ![dark](https://raw.githubusercontent.com/N3agu/PostgresMonitor/refs/heads/main/Images/dark.png)
+</details>
 
-### Settings
-![Settings](Images/settings.png)
+<details>
+  <summary><strong>Settings</strong></summary>
+  
+  ![settings](https://raw.githubusercontent.com/N3agu/PostgresMonitor/refs/heads/main/Images/settings.png)
+</details>
 
-### Edit
-![Edit](Images/edit.png)
+<details>
+  <summary><strong>Edit</strong></summary>
+  
+  ![](https://raw.githubusercontent.com/N3agu/PostgresMonitor/refs/heads/main/Images/edit.png)
+</details>
+
+## Setup and Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd PostgresMonitor
+   ```
+
+2. **Build the solution:**
+  ```bash
+  dotnet build
+  ```
+
+3. **Run the web application:**
+   ```bash
+   dotnet run --project PostgresMonitor.Web
+   ```
+
+4. **Initial Configuration:**
+    - Open a browser and navigate to `https://localhost:7240` (or the port provided in your terminal).
+    - You will see a "Waiting for telemetry" message. Navigate to the Settings tab.
+    - Click Add Database and provide your PostgreSQL host, port, database name, and credentials.
+    - Set the new Database as active by clicking the icon.
+    - Once saved, the background service will automatically begin polling your database at the configured interval.
+
+## Testing
+The project includes an xUnit test suite (`PostgresMonitor.Tests`) that utilizes Moq to isolate and verify controller logic, specifically focusing on edge cases in the configuration validation pipeline.
+
+To run the test suite:
+```bash
+dotnet test
+```
+
+![tests](Images/tests.png)
