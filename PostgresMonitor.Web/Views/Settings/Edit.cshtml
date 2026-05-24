@@ -21,11 +21,24 @@
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="IsActive" />
 
-            <div class="mb-4">
-                <label asp-for="ConnectionName" class="form-label">Alias</label>
-                <input asp-for="ConnectionName" class="form-control"
-                       placeholder="e.g. Production Read Replica" required autocomplete="off" />
-                <div class="form-text small text-muted mt-1">A friendly name shown in the dashboard.</div>
+            <div class="row g-3 mb-4">
+                <div class="col-md-8">
+                    <label asp-for="ConnectionName" class="form-label">Alias</label>
+                    <input asp-for="ConnectionName" class="form-control"
+                           placeholder="e.g. Production Read Replica" required autocomplete="off" />
+                    <div class="form-text small text-muted mt-1">A friendly name shown in the dashboard.</div>
+                </div>
+                <div class="col-md-4">
+                    <label asp-for="PollingIntervalSeconds" class="form-label">Polling Interval</label>
+                    <select asp-for="PollingIntervalSeconds" class="form-select">
+                        <option value="5">5 seconds (Aggressive)</option>
+                        <option value="10">10 seconds (Standard)</option>
+                        <option value="15">15 seconds</option>
+                        <option value="30">30 seconds (Relaxed)</option>
+                        <option value="60">1 minute</option>
+                    </select>
+                    <div class="form-text small text-muted mt-1">How often to collect telemetry.</div>
+                </div>
             </div>
 
             <div class="divider"></div>

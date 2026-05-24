@@ -285,5 +285,19 @@
     "SlowQueries": 0,
     "CpuUsage": 37.48,
     "MemoryUsage": 4907
+  },
+  {
+    "Timestamp": "2026-05-24T18:22:39.746879Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 70.75,
+    "MemoryUsage": 5233
+  },
+  {
+    "Timestamp": "2026-05-24T18:22:50.337293Z",
+    "ActiveConnections": 1,
+    "SlowQueries": 0,
+    "CpuUsage": 45.8,
+    "MemoryUsage": 5106
   }
 ]
