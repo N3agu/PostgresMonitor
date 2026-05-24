@@ -64,9 +64,9 @@ The application follows a standard ASP.NET Core MVC architecture combined with a
    ```
 
 2. **Build the solution:**
-  ```bash
-  dotnet build
-  ```
+   ```bash
+   dotnet build
+   ```
 
 3. **Run the web application:**
    ```bash
