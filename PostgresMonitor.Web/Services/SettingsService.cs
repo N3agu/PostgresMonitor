@@ -39,6 +39,11 @@ namespace PostgresMonitor.Web.Services
 
             if (existing != null)
             {
+                if (string.IsNullOrWhiteSpace(settings.Password))
+                {
+                    settings.Password = existing.Password;
+                }
+
                 all.Remove(existing);
             }
 

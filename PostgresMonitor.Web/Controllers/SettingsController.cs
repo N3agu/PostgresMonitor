@@ -35,12 +35,22 @@ namespace PostgresMonitor.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(DbSettings settings)
         {
+            ModelState.Remove("Password");
+
+            var existingDb = await _settingsService.GetByIdAsync(settings.Id);
+
+            if (existingDb == null && string.IsNullOrWhiteSpace(settings.Password))
+            {
+                ModelState.AddModelError("Password", "A password is required when adding a new database connection.");
+            }
+
             if (ModelState.IsValid)
             {
                 await _settingsService.SaveAsync(settings);
                 TempData["SuccessMessage"] = "Database configuration saved successfully.";
                 return RedirectToAction(nameof(Index));
             }
+
             return View(settings);
         }
 

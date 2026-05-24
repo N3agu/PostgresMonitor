@@ -3,6 +3,7 @@
     "Id": "361dbfe0-aa62-4eb9-a445-26d2eb8ecfd8",
     "ConnectionName": "Local Postgres",
     "IsActive": true,
+    "PollingIntervalSeconds": 10,
     "Host": "localhost",
     "Port": 5432,
     "Database": "postgres",

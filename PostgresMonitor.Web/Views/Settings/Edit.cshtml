@@ -84,6 +84,9 @@
                             <i class="bi bi-eye" id="passwordToggleIcon"></i>
                         </button>
                     </div>
+
+                    <span asp-validation-for="Password" style="color: var(--pm-danger);" class="small mt-1 d-block fw-semibold"></span>
+
                     @if (!isNew)
                     {
                         <div class="form-text small text-muted mt-1">Leave empty to keep the current password.</div>
